@@ -1,7 +1,7 @@
 import express from "express";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
-import { fileURLToPath } from "url";
+import { fileURLToPath } from "node:url";
 
 dotenv.config({
   override: true,
@@ -129,6 +129,10 @@ app.get("/api/health", (_req, res) => {
   res.json({ status: "ok" });
 });
 
-app.listen(PORT, () => {
-  console.log(`Reservation server running on http://localhost:${PORT}`);
-});
+if (process.env.VERCEL !== "1") {
+  app.listen(PORT, () => {
+    console.log(`Reservation server running on http://localhost:${PORT}`);
+  });
+}
+
+export default app;
