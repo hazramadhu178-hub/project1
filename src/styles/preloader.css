@@ -1,0 +1,148 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(
+      90% 80% at 50% 32%,
+      #f8f5ec 0%,
+      var(--ivory) 52%,
+      #e7e0cf 100%
+    );
+  color: var(--forest-dark);
+}
+
+.preloader__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 1.5rem;
+}
+
+/* leaf ring */
+.preloader__mark {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  animation: preSpin 7s linear infinite;
+}
+
+.preloader__ring {
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(24, 53, 44, 0.1);
+}
+
+.preloader__leaf {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 33px;
+  margin: calc(-33px / 2) 0 0 calc(-15px / 2);
+  border-radius: 60% 60% 55% 55% / 72% 72% 36% 36%;
+  background: var(--forest);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  transform-origin: 50% 50%;
+  opacity: 0.96;
+}
+
+/* place the 8 leaves around the ring */
+.preloader__leaf--1 { transform: rotate(0deg) translateY(-51px); background: var(--forest); }
+.preloader__leaf--2 { transform: rotate(45deg) translateY(-51px); background: var(--gold); }
+.preloader__leaf--3 { transform: rotate(90deg) translateY(-51px); background: var(--forest); }
+.preloader__leaf--4 { transform: rotate(135deg) translateY(-51px); background: var(--gold); }
+.preloader__leaf--5 { transform: rotate(180deg) translateY(-51px); background: var(--forest); }
+.preloader__leaf--6 { transform: rotate(225deg) translateY(-51px); background: var(--gold); }
+.preloader__leaf--7 { transform: rotate(270deg) translateY(-51px); background: var(--forest); }
+.preloader__leaf--8 { transform: rotate(315deg) translateY(-51px); background: var(--gold); }
+
+.preloader__core {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--forest-dark);
+  animation: preSpinReverse 7s linear infinite;
+}
+
+.preloader__core::before {
+  content: "";
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--ivory);
+  border: 1px solid rgba(24, 53, 44, 0.12);
+  z-index: -1;
+}
+
+@keyframes preSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preSpinReverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* wordmark */
+.preloader__word {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.preloader__word span {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.preloader__word small {
+  margin-top: 0.55rem;
+  font-size: 0.55rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+/* progress line */
+.preloader__bar {
+  width: 150px;
+  height: 1px;
+  background: rgba(24, 53, 44, 0.16);
+  overflow: hidden;
+}
+
+.preloader__bar span {
+  display: block;
+  height: 100%;
+  transform-origin: left;
+  background: var(--gold);
+}
+
+.preloader__note {
+  margin: 0;
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader__mark,
+  .preloader__core {
+    animation: none;
+  }
+}

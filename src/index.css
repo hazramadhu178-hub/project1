@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import "./styles/variables.css";
+@import "./styles/global.css";
+@import "./styles/header.css";
+@import "./styles/hero.css";
+@import "./styles/sections.css";
+@import "./styles/rooms.css";
+@import "./styles/gallery.css";
+@import "./styles/footer.css";
+@import "./styles/preloader.css";
+@import "./styles/policies.css";

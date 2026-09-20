@@ -1,0 +1,128 @@
+.vd-footer {
+  background: radial-gradient(
+      100% 80% at 20% 0%,
+      rgba(24, 53, 44, 0.95),
+      transparent 62%
+    ),
+    var(--forest-dark);
+  color: var(--ivory);
+  padding-top: clamp(3.5rem, 7vw, 7rem);
+  margin-top: 1.5rem;
+  border-radius: var(--r-2xl) var(--r-2xl) 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+.foot-top {
+  display: grid;
+  gap: clamp(2rem, 4vw, 4rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  border-bottom: 1px solid var(--line-light);
+}
+
+.foot-brand__mark {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 9vw, 6rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1;
+  background: linear-gradient(
+    120deg,
+    var(--ivory) 30%,
+    var(--gold-soft) 60%,
+    var(--ivory) 90%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.foot-brand__tag {
+  margin-top: 1rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(245, 241, 232, 0.58);
+}
+
+.foot-cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.foot-col {
+  padding: clamp(1.1rem, 2vw, 1.6rem);
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-md);
+  background: rgba(245, 241, 232, 0.03);
+  transition: background 0.5s var(--ease), border-color 0.5s var(--ease);
+}
+
+.foot-col:hover {
+  background: rgba(245, 241, 232, 0.055);
+  border-color: rgba(245, 241, 232, 0.24);
+}
+
+.foot-col h4 {
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.foot-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.foot-col button,
+.foot-col a {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: rgba(245, 241, 232, 0.72);
+  font-size: 0.85rem;
+  font-family: inherit;
+  text-align: left;
+  border-radius: var(--r-xs);
+  transition: color 0.4s var(--ease), padding-left 0.4s var(--ease);
+}
+
+.foot-col button:hover,
+.foot-col a:hover {
+  color: var(--gold-soft);
+  padding-left: 6px;
+}
+
+.foot-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.5rem 2rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(245, 241, 232, 0.45);
+}
+
+@media (min-width: 620px) {
+  .foot-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .foot-top {
+    grid-template-columns: 1fr 1.15fr;
+    align-items: start;
+  }
+}

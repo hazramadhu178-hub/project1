@@ -1,0 +1,63 @@
+import { px } from "./images";
+
+export const rooms = [
+  {
+    id: "forest-deluxe",
+    name: "Forest Deluxe",
+    size: "42 m²",
+    guests: "2 Guests",
+    view: "Forest View",
+    price: "₹18,500",
+    image: px(14025037, 1100, 825),
+    desc: "Warm timber, soft linen and views into the surrounding pine forest.",
+    long: "A ground-level room opening onto the treeline, where mornings arrive slowly through the pines. Hand-finished timber, locally woven textiles and a deep reading chair placed exactly where the light falls.",
+    features: ["King bed", "Rain shower", "Wood-burning heater", "Private deck"],
+  },
+  {
+    id: "mountain-view",
+    name: "Mountain View",
+    size: "48 m²",
+    guests: "2 Guests",
+    view: "Mountain View",
+    price: "₹22,000",
+    image: px(6876834, 1100, 825),
+    desc: "Wake to layers of Himalayan peaks framed by expansive windows.",
+    long: "Positioned along the eastern ridge, these rooms are designed around a single, uninterrupted window — a frame for the ranges that shift colour from first light to dusk.",
+    features: ["King bed", "Panoramic window", "Soaking tub", "Tea ritual tray"],
+  },
+  {
+    id: "himalayan-suite",
+    name: "Himalayan Suite",
+    size: "65 m²",
+    guests: "3 Guests",
+    view: "Panoramic View",
+    price: "₹28,500",
+    image: px(32418081, 1100, 825),
+    desc: "A spacious retreat combining refined interiors with uninterrupted mountain views.",
+    long: "A separate living room, a fireplace built from river stone and a terrace that catches the last of the afternoon sun. Made for unhurried days and long, quiet evenings.",
+    features: ["Separate living room", "Stone fireplace", "Terrace", "Butler service"],
+  },
+  {
+    id: "verdara-villa",
+    name: "Verdara Villa",
+    size: "95 m²",
+    guests: "4 Guests",
+    view: "Private Terrace",
+    price: "₹42,000",
+    image: px(14025904, 1100, 825),
+    desc: "Our most private residence, designed for long stays and unforgettable mountain mornings.",
+    long: "Set apart from the main house at the edge of the forest, the villa offers two bedrooms, a private garden terrace and a kitchen for chef-led dinners at home.",
+    features: ["Two bedrooms", "Private garden", "In-villa dining", "Dedicated host"],
+  },
+];
+
+export const roomAmenities = [
+  "King beds",
+  "Premium linens",
+  "Mountain views",
+  "Rain showers",
+  "Underfloor heating",
+  "High-speed Wi-Fi",
+  "Tea & coffee ritual",
+  "24-hour room service",
+];
