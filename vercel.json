@@ -1,18 +1,16 @@
 {
-  "version": 2,
-  "functions": {
-    "backend/server.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/backend/server.js"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
+ "version": 2,
+ "builds": [
+  {
+   "src": "server.js",
+   "use": "@vercel/node",
+   "config": { "includeFiles": ["dist/**"] }
+  }
+ ],
+ "routes": [
+  {
+   "src": "/(.*)",
+   "dest": "server.js"
+  }
+ ]
 }
