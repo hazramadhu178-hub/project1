@@ -33,23 +33,18 @@ export default function StorySection() {
       <div className="vd-container">
         <SectionHeading
           label="Our Story"
-          number="Section 05"
           title={"Built around\nthe land."}
           aside="Verdara was imagined as a place where hospitality and nature could exist together. Every detail — from locally crafted interiors to seasonal cuisine — is designed to create a deeper connection with the mountains."
         />
 
         {blocks.map((b, i) => (
           <article
-            key={b.num}
             className={`story-block ${i % 2 === 1 ? "story-block--alt" : ""}`}
           >
             <Reveal>
               <ParallaxImage src={b.image} alt={b.alt} distance={28} />
             </Reveal>
             <div className="story-block__body">
-              <Reveal y={14}>
-                <span className="story-block__num">{b.num}</span>
-              </Reveal>
               <h3 className="vd-h3">
                 <RevealLine>{b.title}</RevealLine>
               </h3>
