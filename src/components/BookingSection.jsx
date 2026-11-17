@@ -1,7 +1,6 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Reveal, { RevealLine } from "./Reveal";
 import BookingForm from "./BookingForm";
-import { socialLinks } from "./SocialIcons";
 
 export default function BookingSection({ presetRoom }) {
     return (
@@ -67,14 +66,6 @@ export default function BookingSection({ presetRoom }) {
         </p>
         </div>
 
-        <div className="contact-item">
-        <span>Follow</span>
-        <div className="socials" style={{ marginTop: "0.5rem" }}>
-        {socialLinks.map(({ label, href, Icon }) => (
-            <a key={label} href={href} aria-label={label}><Icon /></a>
-        ))}
-        </div>
-        </div>
         </div>
         </Reveal>
         </div>

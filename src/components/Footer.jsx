@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import { navItems, scrollToSection } from "../data/nav";
-import { socialLinks } from "./SocialIcons";
 import Reveal from "./Reveal";
 
 const info = [
@@ -63,12 +62,6 @@ export default function Footer({ onOpenPolicy }) {
                 <li><a href="mailto:stay@verdararesort.com">stay@verdararesort.com</a></li>
                 <li><button onClick={() => scrollToSection("booking")}>Darjeeling, West Bengal</button></li>
             </ul>
-            
-            <div className="socials" style={{ marginTop: "1.5rem" }}>
-                {socialLinks.map(({ label, href, Icon }) => (
-                    <a key={label} href={href} aria-label={label}><Icon /></a>
-                ))}
-            </div>
             </div>
         </div>
         </Reveal>

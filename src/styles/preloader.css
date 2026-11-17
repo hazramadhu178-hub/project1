@@ -11,6 +11,13 @@
       #e7e0cf 100%
     );
   color: var(--forest-dark);
+    transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+
+.preloader.is-hidden {
+    opacity: 0;
+    transform: translateY(-2%);
+    pointer-events: none;
 }
 
 .preloader__inner {

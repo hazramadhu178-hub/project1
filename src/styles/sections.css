@@ -1148,29 +1148,6 @@
   color: var(--gold);
 }
 
-.socials {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.socials a {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(245, 241, 232, 0.22);
-  border-radius: var(--r-pill);
-  transition: background 0.4s var(--ease), color 0.4s var(--ease),
-    border-color 0.4s var(--ease), transform 0.4s var(--ease);
-}
-
-.socials a:hover {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--forest-dark);
-  transform: translateY(-3px);
-}
-
 .book-success {
   border: 1px solid rgba(181, 154, 99, 0.45);
   border-radius: var(--r-xl);

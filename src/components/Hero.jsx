@@ -25,7 +25,7 @@ export default function Hero() {
 return (
     <section className="hero" id="home" ref={ref}>
         <motion.div className="hero__media" style={reduce ? undefined : { y }}>
-        <motion.img src={IMG.hero} alt="Mist drifting through Himalayan pine forest above Darjeeling at first light" fetchPriority="high" initial={reduce ? false : { scale: 1.18 }} animate={{ scale: 1 }} transition={{ duration: 8, ease: "easeOut" }} />
+        <motion.img src={IMG.hero} alt="Mist drifting through Himalayan pine forest above Darjeeling at first light" fetchPriority="high" decoding="async" initial={reduce ? false : { scale: 1.18 }} animate={{ scale: 1 }} transition={{ duration: 8, ease: "easeOut" }} />
       </motion.div>
       <div className="hero__scrim" />
       <div className="hero__mist" aria-hidden="true">

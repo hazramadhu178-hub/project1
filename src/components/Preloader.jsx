@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -30,48 +30,41 @@ export default function Preloader() {
   }, [done]);
 
   return (
-    <AnimatePresence>
-      {!done && (
-        <motion.div
-          className="preloader"
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0, y: "-2%" }}
-          transition={{ duration: 0.9, ease }}
-          aria-hidden="false"
-          role="status"
-          aria-label="Verdara is loading"
-        >
-          <div className="preloader__inner">
-            <div className="preloader__mark">
-              <span className="preloader__ring" />
-              <span className="preloader__leaf preloader__leaf--1" />
-              <span className="preloader__leaf preloader__leaf--2" />
-              <span className="preloader__leaf preloader__leaf--3" />
-              <span className="preloader__leaf preloader__leaf--4" />
-              <span className="preloader__leaf preloader__leaf--5" />
-              <span className="preloader__leaf preloader__leaf--6" />
-              <span className="preloader__leaf preloader__leaf--7" />
-              <span className="preloader__leaf preloader__leaf--8" />
-              <span className="preloader__core">V</span>
-            </div>
+    <div
+      className={`preloader${done ? " is-hidden" : ""}`}
+      aria-hidden={done}
+      role="status"
+      aria-label="Verdara is loading"
+    >
+      <div className="preloader__inner">
+        <div className="preloader__mark">
+          <span className="preloader__ring" />
+          <span className="preloader__leaf preloader__leaf--1" />
+          <span className="preloader__leaf preloader__leaf--2" />
+          <span className="preloader__leaf preloader__leaf--3" />
+          <span className="preloader__leaf preloader__leaf--4" />
+          <span className="preloader__leaf preloader__leaf--5" />
+          <span className="preloader__leaf preloader__leaf--6" />
+          <span className="preloader__leaf preloader__leaf--7" />
+          <span className="preloader__leaf preloader__leaf--8" />
+          <span className="preloader__core">V</span>
+        </div>
 
-            <div className="preloader__word">
-              <span>Verdara</span>
-              <small>Mountain Resort</small>
-            </div>
+        <div className="preloader__word">
+          <span>Verdara</span>
+          <small>Mountain Resort</small>
+        </div>
 
-            <div className="preloader__bar">
-              <motion.span
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 1.9, ease }}
-              />
-            </div>
+        <div className="preloader__bar">
+          <motion.span
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1.9, ease }}
+          />
+        </div>
 
-            <p className="preloader__note">Where the mountains become home</p>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+        <p className="preloader__note">Where the mountains become home</p>
+      </div>
+    </div>
   );
 }

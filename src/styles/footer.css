@@ -52,6 +52,7 @@
 }
 
 .foot-col {
+  min-width: 0;
   padding: clamp(1.1rem, 2vw, 1.6rem);
   border: 1px solid var(--line-light);
   border-radius: var(--r-md);
@@ -91,6 +92,7 @@
   font-size: 0.85rem;
   font-family: inherit;
   text-align: left;
+  overflow-wrap: anywhere;
   border-radius: var(--r-xs);
   transition: color 0.4s var(--ease), padding-left 0.4s var(--ease);
 }
@@ -116,7 +118,7 @@
 
 @media (min-width: 620px) {
   .foot-cols {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
